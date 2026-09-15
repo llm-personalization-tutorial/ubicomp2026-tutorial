@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UbiComp/ISWC 2026 Tutorial | LLM Personalization</title>
+  <meta name="description" content="From Generic Intelligence to Personalized AI: a UbiComp/ISWC 2026 tutorial on LLM personalization across cloud, edge, and device." />
+  <meta name="keywords" content="UbiComp 2026, ISWC 2026, Shanghai, LLM personalization, human-centered AI, edge AI, on-device AI, ubiquitous computing, user modeling" />
+  <meta name="author" content="UbiComp/ISWC Tutorial on LLM Personalization" />
+  <link rel="canonical" href="https://llm-personalization-tutorial.github.io/ubicomp2026-tutorial/" />
+
+  <meta property="og:title" content="From Generic Intelligence to Personalized AI | UbiComp/ISWC 2026" />
+  <meta property="og:description" content="A Tutorial on Foundations of LLM Personalization, extended with human-centered cloud–edge–device collaboration." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://llm-personalization-tutorial.github.io/ubicomp2026-tutorial/" />
+  <meta property="og:image" content="https://llm-personalization-tutorial.github.io/ubicomp2026-tutorial/assets/img/ubicomp-shanghai-human-centered-hero.png" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2315283a'/%3E%3Ccircle cx='32' cy='25' r='9' fill='%23f06b58'/%3E%3Cpath d='M14 53c2-12 9-18 18-18s16 6 18 18' fill='%23f4c96b'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css?v=lecture-style" />
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="From Generic Intelligence to Personalized AI tutorial home">
+        <span class="brand-mark" aria-hidden="true">人</span>
+        <span class="brand-text">LLM Personalization</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#top">Home</a>
+        <a href="#approach">Approach</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#presenters">People</a>
+        <a href="#materials">Materials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">ACM UbiComp / ISWC 2026 · Shanghai</p>
+          <h1 id="hero-title">From Generic Intelligence to Personalized AI</h1>
+          <p class="hero-subtitle">A Tutorial on Foundations of LLM Personalization</p>
+          <p class="hero-summary">Personal intelligence that understands context, respects boundaries, and keeps people in control.</p>
+          <div class="keyword-row" aria-label="Tutorial themes">
+            <span>Situated User Modeling</span>
+            <span>On-Device Adaptation</span>
+            <span>Edge Collaboration</span>
+            <span>Human Agency</span>
+            <span>Field Evaluation</span>
+          </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <!-- TODO: Replace the proposal PDF with an approved export spelling Yuhan Wang and Philip S. Yu before publication. -->
+            <a class="button button-primary" href="assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf">Tutorial Proposal</a>
+            <a class="button button-secondary" href="#schedule">Explore the Program</a>
+            <a class="button button-ghost" href="https://www.ubicomp.org/ubicomp-iswc-2026/" target="_blank" rel="noopener">Conference Website</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Tutorial snapshot">
+          <p class="panel-kicker">Shanghai · 2026</p>
+          <dl class="snapshot-list">
+            <div>
+              <dt>Conference</dt>
+              <dd>ACM UbiComp / ISWC 2026</dd>
+            </div>
+            <div>
+              <dt>Format</dt>
+              <dd>Lecture-style 3-hour tutorial</dd>
+            </div>
+            <div>
+              <dt>Date</dt>
+              <dd>Monday, October 12, 2026</dd>
+            </div>
+            <div>
+              <dt>Venue</dt>
+              <dd>Shanghai International Convention Center</dd>
+            </div>
+            <div>
+              <dt>Session</dt>
+              <dd>Morning · Room 5G</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="approach" class="section section-tint" aria-labelledby="abstract-title">
+      <div class="container text-layout">
+        <div class="section-heading sticky-heading">
+          <p class="section-kicker">The Human Question</p>
+          <h2 id="abstract-title">When should a system adapt—and when should it step back?</h2>
+        </div>
+        <div class="text-block">
+          <p>Large language models are moving into phones, wearables, vehicles, homes, and public environments. In these settings, useful personalization must respond to people, places, routines, and changing intent—not only to a static profile.</p>
+          <p>This tutorial connects personalization methods with cloud–edge–device systems. We examine what stays close to the person, what can be coordinated at the edge, and when cloud intelligence is worth the latency and disclosure.</p>
+          <p>Our central premise is simple: people should be able to inspect, correct, pause, and revoke adaptation. Success therefore includes agency, privacy, fairness, latency, energy, and longitudinal benefit—not accuracy alone.</p>
+          <div class="principle-strip" aria-label="Human-centered principles">
+            <span>Legible</span>
+            <span>Correctable</span>
+            <span>Revocable</span>
+            <span>Context-aware</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Why This Tutorial</p>
+          <h2 id="why-title">From model-centric personalization to lived experience</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="card-number">01</span>
+            <h3>Situated, not static</h3>
+            <p>Model evolving goals, social settings, device handovers, and moments when personalization is inappropriate.</p>
+          </article>
+          <article class="feature-card">
+            <span class="card-number">02</span>
+            <h3>Collaborative by design</h3>
+            <p>Place memory, adaptation, and inference across device, edge, and cloud under real resource constraints.</p>
+          </article>
+          <article class="feature-card">
+            <span class="card-number">03</span>
+            <h3>People retain agency</h3>
+            <p>Build consent, explanation, correction, expiration, deletion, and a non-personalized fallback into the loop.</p>
+          </article>
+          <article class="feature-card">
+            <span class="card-number">04</span>
+            <h3>Evaluated in the world</h3>
+            <p>Connect model and systems metrics with workload, interruption, trust, equity, and longitudinal outcomes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section architecture-section" aria-labelledby="architecture-title">
+      <div class="container">
+        <div class="section-heading architecture-heading">
+          <p class="section-kicker">Design Space</p>
+          <h2 id="architecture-title">One person, three computational layers</h2>
+          <p>Placement is a human decision as much as a systems decision: it determines what can be known, how quickly the system responds, and which boundaries remain meaningful.</p>
+        </div>
+        <div class="architecture-shell">
+          <article class="tier-card tier-device">
+            <span class="tier-label">Device</span>
+            <h3>Close to the person</h3>
+            <p>Private context, recent memory, sensors, lightweight adapters, immediate feedback, offline continuity.</p>
+            <ul>
+              <li>Lowest latency</li>
+              <li>Smallest resource budget</li>
+              <li>Strongest local control</li>
+            </ul>
+          </article>
+          <article class="tier-card tier-edge">
+            <span class="tier-label">Edge</span>
+            <h3>Close to the situation</h3>
+            <p>Local coordination, caching, cross-device context, adaptive routing, and low-latency shared services.</p>
+            <ul>
+              <li>Contextual orchestration</li>
+              <li>Selective aggregation</li>
+              <li>Trust must be negotiated</li>
+            </ul>
+          </article>
+          <article class="tier-card tier-cloud">
+            <span class="tier-label">Cloud</span>
+            <h3>Broad capability</h3>
+            <p>General knowledge, high-capacity reasoning, expensive updates, and support for smaller local models.</p>
+            <ul>
+              <li>Greatest model capacity</li>
+              <li>Network-dependent</li>
+              <li>Highest disclosure cost</li>
+            </ul>
+          </article>
+          <div class="human-core">
+            <span class="human-icon" aria-hidden="true">人</span>
+            <div>
+              <strong>Human agency is the routing policy</strong>
+              <span>Inspect · Correct · Pause · Revoke</span>
+            </div>
+          </div>
+          <svg class="architecture-connectors" aria-hidden="true" focusable="false">
+            <path data-connect="device"></path>
+            <path data-connect="edge"></path>
+            <path data-connect="cloud"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section" aria-labelledby="schedule-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Three-Hour Program</p>
+          <h2 id="schedule-title">From foundations to deployment</h2>
+          <p>Monday, October 12, 2026 · morning · Room 5G. The module durations below form a planned three-hour lecture sequence; exact clock times have not yet been posted by the conference.</p>
+        </div>
+        <div class="schedule-table-wrap">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th scope="col">Duration</th>
+                <th scope="col">Module</th>
+                <th scope="col">Lecture focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>20 min</td><td><strong>People, Context, and Personalization</strong><span>From generic assistants to situated, evolving experiences</span></td><td>Foundations</td></tr>
+              <tr><td>30 min</td><td><strong>Prompting-Based Personalization</strong><span>Profile instructions, retrieval, memory, demonstrations, prompt optimization</span></td><td>Method lecture I</td></tr>
+              <tr><td>30 min</td><td><strong>Adaptation-Based Personalization</strong><span>User representations, adapters, fine-tuning, preference optimization, continual learning</span></td><td>Method lecture II</td></tr>
+              <tr><td>40 min</td><td><strong>Cloud–Edge–Device Collaboration</strong><span>Placement, routing, federated adaptation, graceful degradation</span></td><td>Systems lecture</td></tr>
+              <tr><td>10 min</td><td><strong>Break</strong></td><td>—</td></tr>
+              <tr><td>30 min</td><td><strong>Human-Centered Data and Evaluation</strong><span>Consent, bystanders, shared devices, longitudinal field study</span></td><td>Evaluation lecture</td></tr>
+              <tr><td>15 min</td><td><strong>Situated Applications and Open Challenges</strong><span>Mobile well-being, shared homes, urban mobility, research agenda</span></td><td>Application lecture</td></tr>
+              <tr><td>5 min</td><td><strong>Synthesis</strong><span>Main takeaways for UbiComp/ISWC</span></td><td>Summary</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="presenters" class="section section-tint" aria-labelledby="presenters-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Organizers &amp; Instructors</p>
+          <h2 id="presenters-title">A cross-disciplinary teaching team</h2>
+          <p>Expertise spanning personalized LLMs, efficient AI systems, user modeling, trustworthy learning, and large-scale data mining.</p>
+        </div>
+        <div class="presenter-list">
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-blue" data-initials="RW"><img src="assets/img/presenters/ruijie-wang.jpg" alt="Ruijie Wang" /></div>
+            <div class="presenter-info"><h3>Ruijie Wang</h3><p class="affiliation">Beihang University</p><p class="bio">Professor working on trustworthy and efficient AI, large language models, graph learning, temporal data mining, and structured knowledge integration. His work connects personalization methods with efficient and responsible deployment.</p><a class="homepage-link" href="https://wjerry5.github.io/" target="_blank" rel="noopener">Homepage</a></div>
+          </article>
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-cyan" data-initials="QZ"><img src="assets/img/presenters/qingkai-zeng.png" alt="Qingkai Zeng" /></div>
+            <div class="presenter-info"><h3>Qingkai Zeng</h3><p class="affiliation">Nankai University</p><p class="bio">Associate Professor researching text mining, knowledge-enhanced LLMs, and reliable and interpretable reasoning in knowledge-intensive systems.</p><a class="homepage-link" href="https://qingkaizeng.github.io/" target="_blank" rel="noopener">Homepage</a></div>
+          </article>
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-violet" data-initials="XW"><img src="assets/img/presenters/xuefei-wang.jpg" alt="Xuefei Wang" /></div>
+            <div class="presenter-info"><h3>Xuefei Wang</h3><p class="affiliation">Beihang University</p><p class="bio">Ph.D. student focused on LLM personalization and system implementation, with hands-on experience in personalization pipelines and deployment trade-offs.</p></div>
+          </article>
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-orange" data-initials="YW"><img src="assets/img/presenters/yuhan-wang.jpg" alt="Yuhan Wang" /></div>
+            <div class="presenter-info"><h3>Yuhan Wang</h3><p class="affiliation">Beihang University</p><p class="bio">Incoming Ph.D. student researching LLM personalization and continual learning, with a focus on evolving user preferences and continual on-device adaptation.</p></div>
+          </article>
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-green" data-initials="LS"><img src="assets/img/presenters/li-sun.png" alt="Li Sun" /></div>
+            <div class="presenter-info"><h3>Li Sun</h3><p class="affiliation">Beijing University of Posts and Telecommunications</p><p class="bio">Associate Professor researching large language models, graph representation learning, knowledge mining, and efficient knowledge-enhanced adaptation.</p><a class="homepage-link" href="https://sunli-ai.github.io/" target="_blank" rel="noopener">Homepage</a></div>
+          </article>
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-navy" data-initials="JL"><img src="assets/img/presenters/jianxin-li.png" alt="Jianxin Li" /></div>
+            <div class="presenter-info"><h3>Jianxin Li</h3><p class="affiliation">Beihang University</p><p class="bio">Professor working on social network analysis, trustworthy machine learning, large-scale data mining, and dependable learning systems.</p><a class="homepage-link" href="https://myjianxin.github.io/" target="_blank" rel="noopener">Homepage</a></div>
+          </article>
+          <article class="presenter-row">
+            <div class="presenter-photo avatar-indigo" data-initials="PY"><img src="assets/img/presenters/philip-yu.png" alt="Philip S. Yu" /></div>
+            <div class="presenter-info"><h3>Philip S. Yu</h3><p class="affiliation">University of Illinois Chicago</p><p class="bio">Distinguished Professor and Wexler Chair whose research spans data mining, graph learning, user behavior modeling, multimodal LLMs, and large-scale analytics.</p><a class="homepage-link" href="https://cs.uic.edu/profiles/philip-yu/" target="_blank" rel="noopener">Homepage</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials" class="section" aria-labelledby="materials-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Open Materials</p>
+          <h2 id="materials-title">Use the framework after Shanghai</h2>
+          <p>The proposal is available now. Slides, lecture notes, architecture comparison tables, and the reading map will be released here.</p>
+        </div>
+        <div class="materials-grid">
+          <a class="material-card material-card-active" href="assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf"><span class="material-type">PDF</span><strong>Tutorial Proposal</strong><span>Read the UbiComp/ISWC 2026 proposal</span></a>
+          <article class="material-card material-card-disabled" aria-disabled="true"><span class="material-type">Slides</span><strong>Teaching Deck</strong><span>Coming soon</span></article>
+          <article class="material-card material-card-disabled" aria-disabled="true"><span class="material-type">Notes</span><strong>Lecture Notes</strong><span>Coming soon</span></article>
+          <article class="material-card material-card-disabled" aria-disabled="true"><span class="material-type">Reference</span><strong>Architecture Tables</strong><span>Coming soon</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="section section-tint" aria-labelledby="citation-title">
+      <div class="container">
+        <div class="section-heading citation-heading">
+          <div><p class="section-kicker">Citation</p><h2 id="citation-title">BibTeX</h2><p>Provisional tutorial citation based on the submitted proposal; update with the ACM Digital Library record when available.</p></div>
+          <button class="button button-secondary copy-button" type="button" data-copy-target="bibtex-code">Copy BibTeX</button>
+        </div>
+        <pre class="bibtex-block"><code id="bibtex-code">@misc{wang2026human,
+  title        = {From Generic Intelligence to Personalized AI: A Tutorial on Foundations of LLM Personalization},
+  author       = {Wang, Ruijie and Zeng, Qingkai and Wang, Xuefei and Wang, Yuhan and Sun, Li and Li, Jianxin and Yu, Philip S.},
+  howpublished = {Tutorial at ACM UbiComp/ISWC 2026},
+  year         = {2026},
+  address      = {Shanghai, China},
+  url          = {https://llm-personalization-tutorial.github.io/ubicomp2026-tutorial/}
+}</code></pre>
+        <p class="copy-status" data-copy-status aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container contact-panel">
+        <div class="section-heading compact"><p class="section-kicker">Contact</p><h2 id="contact-title">Questions, scenarios, collaborations</h2></div>
+        <div class="contact-links"><a href="mailto:xuefeiw@buaa.edu.cn">xuefeiw@buaa.edu.cn</a><a href="mailto:ruijiew@buaa.edu.cn">ruijiew@buaa.edu.cn</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 LLM Personalization Tutorial · Shanghai</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
