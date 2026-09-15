@@ -19,46 +19,42 @@ Open `http://localhost:8000/`. If port 8000 is occupied, use `python3 -m http.se
 - `assets/css/style.css`: responsive design.
 - `assets/js/main.js`: presenter-image fallback and BibTeX copy behavior.
 - `assets/img/ubicomp-shanghai-human-centered-hero.png`: hero artwork.
-- `assets/img/presenters/`: seven organizer/instructor photos used by the page.
+- `assets/img/presenters/`: ten organizer, instructor, and chair photos used by the page. Their display order follows the numbered files in the teacher's `Tutorial-Photo` folder: Ruijie Wang, Qingkai Zeng, Xuefei Wang, Yuhan Wang, Li Sun, Ge Wang, Shengzhong Liu, Jizhong Zhao, Jianxin Li, and Philip S. Yu.
 - `assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf`: the five-page tutorial proposal.
 - `.nojekyll`: serves this static site without Jekyll processing.
 
 The KDD paper, KDD Introduction slides, teacher's information-collection form, photo ZIP, site ZIP, and reference screenshot PDF are **not** part of this publication copy.
 
-## Recommended GitHub Pages Deployment
+## GitHub Pages and Later Updates
 
-Use the existing GitHub organization **`llm-personalization-tutorial`**, but create a **new, separate public repository** named **`ubicomp2026-tutorial`**. Do not reuse the existing repository `llm-personalization-tutorial.github.io`: that repository serves the KDD site at the organization root.
-
-With this repository name, the expected Ubicomp URL is:
+This website is already published from the separate repository **`llm-personalization-tutorial/ubicomp2026-tutorial`** at:
 
 `https://llm-personalization-tutorial.github.io/ubicomp2026-tutorial/`
 
-Create the repository at `https://github.com/organizations/llm-personalization-tutorial/repositories/new` or through the organization's **Repositories > New** interface. Choose **Public** and leave **Add a README**, **.gitignore**, and **license** unchecked so the remote is empty. Confirm the owner and name before creating it.
+The Git remote is `git@github.com:llm-personalization-tutorial/ubicomp2026-tutorial.git`; the existing KDD repository `llm-personalization-tutorial.github.io` serves a different website at the organization root. Do **not** run `git init`, create another repository, or change the remote to the KDD repository for ordinary updates.
 
-After obtaining a corrected, approved proposal PDF and reviewing the page, run:
+After checking the revised page locally, run:
 
 ```bash
 cd "/Users/grsxsa/2026 Autumn/Ubicomp tutorial/ubicomp2026-tutorial-site"
-git init
-git branch -M main
-git add .
 git status
-git commit -m "Publish UbiComp 2026 tutorial website"
-git remote add origin git@github.com:llm-personalization-tutorial/ubicomp2026-tutorial.git
 git remote -v
-git push -u origin main
+git add index.html README.md assets/css/style.css assets/img/presenters/ge-wang.png assets/img/presenters/shengzhong-liu.jpeg assets/img/presenters/jizhong-zhao.png
+git diff --cached --stat
+git commit -m "Add UbiComp tutorial chairs"
+git push origin main
 ```
 
-The `git remote -v` output **must** show `ubicomp2026-tutorial.git`, never `llm-personalization-tutorial.github.io.git`. The previous KDD site remains unchanged.
+The `git remote -v` output **must** show `ubicomp2026-tutorial.git`, never `llm-personalization-tutorial.github.io.git`. `git add` only stages local files; GitHub Pages changes after both `git commit` and `git push`.
 
-Then open the new repository on GitHub and select **Settings > Pages > Build and deployment**. Set **Source** to **Deploy from a branch**, **Branch** to **main**, **Folder** to **/(root)**, and click **Save**. Check **Actions** for a successful `pages build and deployment` run. The Pages settings screen will show the published URL.
+On GitHub, inspect **Settings > Pages > Build and deployment** to confirm the existing source is **Deploy from a branch**, **main**, **/(root)**. Check **Actions** for a successful `pages build and deployment` run after pushing, then open the published URL and verify the new people and photos. The KDD root site remains unchanged.
 
 If a different repository name or a new organization is chosen, update the `canonical`, `og:url`, `og:image`, and BibTeX `url` values in `index.html` before publishing. The page uses relative asset paths, so ordinary assets will still load under a project-site prefix.
 
-## Before Publication
+## Content to Confirm
 
-- **Replace the downloadable proposal PDF before publication.** The organizer has confirmed the public names `Yuhan Wang` and `Philip S. Yu`; the website, photos, and provisional BibTeX now use them. The teacher-provided PDF still says `Yuhang Wang` and `Phillip S. Yu` in its author information and body. Request a corrected, approved export from the proposal source and replace `assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf`. Do not patch the formal PDF visually or silently modify the teacher's original.
-- Confirm that the seven names in the submitted proposal are the intended public organizers/instructors. The separate information-collection form lists three chairs, Ge Wang, Shengzhong Liu, and Jizhong Zhao, but leaves its tutorial and speaker fields blank. Confirm whether those chairs belong on this tutorial website before adding them.
+- **Replace the downloadable proposal PDF once an approved correction is available.** The organizer has confirmed the public names `Yuhan Wang` and `Philip S. Yu`; the website, photos, and provisional BibTeX now use them. The teacher-provided PDF still says `Yuhang Wang` and `Phillip S. Yu` in its author information and body. Request a corrected, approved export from the proposal source and replace `assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf`. Do not patch the formal PDF visually or silently modify the teacher's original.
+- The seven submitted-proposal organizers/instructors and three information-form tutorial chairs are shown together in numbered-photo order. Confirm their final public roles and permissions with the tutorial organizers before publication; the form's speaker-assignment fields remain blank.
 - Confirm exact start/end clock times if the conference later publishes them. The official listing currently says only `Morning`.
 - Confirm that the five-page submitted proposal is the PDF approved for public release. It is linked from the hero and Materials section.
 - Replace the provisional `@misc` BibTeX with the final ACM Digital Library record when one exists. Do not invent a DOI.
@@ -73,7 +69,7 @@ If a different repository name or a new organization is chosen, update the `cano
 - The snapshot states **Monday, October 12, 2026**, **Morning**, **Room 5G**, and **Shanghai International Convention Center**.
 - The lecture sequence totals **180 minutes**, including its 10-minute break, without claiming an official clock start time.
 - The hero's **Conference Website** button opens the UbiComp/ISWC 2026 conference home page, while the proposal PDF and presenter homepages open correctly.
-- All seven presenter images load; the page and BibTeX spell the corrected names **Yuhan Wang** and **Philip S. Yu**.
+- All ten team photos load in numbered-photo order, with Ge Wang, Shengzhong Liu, and Jizhong Zhao in positions 6, 7, and 8. Their role is marked **Tutorial Chair**; the page and BibTeX spell **Yuhan Wang** and **Philip S. Yu** consistently.
 - The Design Space cards and human-agency element do not overlap at desktop, tablet, or 320px mobile width; the 人 icon is centered in its circle.
 - Open Materials contains exactly four items: Tutorial Proposal, Teaching Deck, Lecture Notes, and Architecture Tables.
 - Navigation anchors work, the mobile page has no unwanted horizontal overflow, and Copy BibTeX works.
@@ -81,13 +77,4 @@ If a different repository name or a new organization is chosen, update the `cano
 - `git remote -v` points to the **new Ubicomp repository** before any push.
 - GitHub Pages deploys from `main` and `/(root)`; the final project-site URL opens without affecting the KDD root site.
 
-For later website updates:
-
-```bash
-cd "/Users/grsxsa/2026 Autumn/Ubicomp tutorial/ubicomp2026-tutorial-site"
-git add .
-git commit -m "Update UbiComp tutorial website"
-git push
-```
-
-`git add` stages a change locally; the change appears online only after `git commit` **and** `git push`.
+For subsequent edits, stage only the changed site files, commit, and push to `origin main`; do not use `git push --force` for routine website changes.
