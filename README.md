@@ -1,6 +1,6 @@
 # UbiComp/ISWC 2026 LLM Personalization Tutorial
 
-Static website for **From Generic Intelligence to Personalized AI: A Tutorial on Foundations of LLM Personalization**. The tutorial is listed as **ID 7, Half Day, Monday, October 12, 2026, Morning, Room 5G** on the [official UbiComp/ISWC 2026 tutorial schedule](https://www.ubicomp.org/ubicomp-iswc-2026/tutorials-2026/). The venue is Shanghai International Convention Center, Shanghai, China. The proposal describes a planned three-hour lecture sequence; the conference has not published exact clock times for this session.
+Static website for **From Generic Intelligence to Personalized AI: A Tutorial on Foundations of LLM Personalization**. The tutorial is listed as **T01, Half Day, Sunday, October 11, 2026, Afternoon, Room 5A** on the [official UbiComp/ISWC 2026 tutorial schedule](https://www.ubicomp.org/ubicomp-iswc-2026/tutorials-2026/). The venue is Shanghai International Convention Center, Shanghai, China. The supplied final webpage package gives the detailed tutorial time as **14:00–17:00**.
 
 This directory is the **Ubicomp publication copy**. Do not publish from the teacher-provided `llm-personalization-tutorial.github.io` folder: that copy retains a Git remote pointing to the live KDD organization website.
 
@@ -17,9 +17,11 @@ Open `http://localhost:8000/`. If port 8000 is occupied, use `python3 -m http.se
 
 - `index.html`: page content, metadata, conference website link, schedule, people, materials, and citation.
 - `assets/css/style.css`: responsive design.
-- `assets/js/main.js`: presenter-image fallback and BibTeX copy behavior.
+- `assets/js/main.js`: presenter-image fallback, responsive Design Space connector geometry, and BibTeX copy behavior.
 - `assets/img/ubicomp-shanghai-human-centered-hero.png`: hero artwork.
-- `assets/img/presenters/`: ten organizer, instructor, and chair photos used by the page. Their display order follows the numbered files in the teacher's `Tutorial-Photo` folder: Ruijie Wang, Qingkai Zeng, Xuefei Wang, Yuhan Wang, Li Sun, Ge Wang, Shengzhong Liu, Jizhong Zhao, Jianxin Li, and Philip S. Yu.
+- `assets/img/presenters/`: eleven team photos used by the page: Ruijie Wang, Qingkai Zeng, Xin Hui, Xuefei Wang, Yuhan Wang, Li Sun, Ge Wang, Shengzhong Liu, Jizhong Zhao, Jianxin Li, and Philip S. Yu.
+- `assets/img/ubicomp2026-tutorial-qr.png`: QR code for the public tutorial website.
+- `assets/files/Tutorial7_A4.pdf`: final A4 tutorial brochure linked from the hero and Materials section.
 - `assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf`: the five-page tutorial proposal.
 - `.nojekyll`: serves this static site without Jekyll processing.
 
@@ -39,7 +41,7 @@ After checking the revised page locally, run:
 cd "/Users/grsxsa/2026 Autumn/Ubicomp tutorial/ubicomp2026-tutorial-site"
 git status
 git remote -v
-git add index.html README.md assets/css/style.css assets/img/presenters/ge-wang.png assets/img/presenters/shengzhong-liu.jpeg assets/img/presenters/jizhong-zhao.png
+git add index.html README.md assets/css/style.css assets/img/presenters assets/img/ubicomp2026-tutorial-qr.png assets/files/Tutorial7_A4.pdf
 git diff --cached --stat
 git commit -m "Add UbiComp tutorial chairs"
 git push origin main
@@ -54,11 +56,11 @@ If a different repository name or a new organization is chosen, update the `cano
 ## Content to Confirm
 
 - **Replace the downloadable proposal PDF once an approved correction is available.** The organizer has confirmed the public names `Yuhan Wang` and `Philip S. Yu`; the website, photos, and provisional BibTeX now use them. The teacher-provided PDF still says `Yuhang Wang` and `Phillip S. Yu` in its author information and body. Request a corrected, approved export from the proposal source and replace `assets/files/LLMPersonalization_Tutorial_UbiComp2026.pdf`. Do not patch the formal PDF visually or silently modify the teacher's original.
-- The seven submitted-proposal organizers/instructors and three information-form tutorial chairs are shown together in numbered-photo order. Confirm their final public roles and permissions with the tutorial organizers before publication; the form's speaker-assignment fields remain blank.
-- Confirm exact start/end clock times if the conference later publishes them. The official listing currently says only `Morning`.
+- Confirm the public roles, biographies, and image permissions for all eleven people shown on the page.
+- Recheck the detailed `14:00–17:00` running order against any last-minute conference or room announcement. The official tutorial listing currently confirms October 11, Afternoon, and Room 5A.
 - Confirm that the five-page submitted proposal is the PDF approved for public release. It is linked from the hero and Materials section.
 - Replace the provisional `@misc` BibTeX with the final ACM Digital Library record when one exists. Do not invent a DOI.
-- Add final Ubicomp-specific slides, lecture notes, and architecture comparison tables. The original page text also mentions a reading map, but Materials intentionally remains a four-item layout with no separate Reading card. The bundled KDD Introduction slides are intentionally not published here.
+- Add final Ubicomp-specific slides, lecture notes, and architecture comparison tables. The Materials area currently includes the tutorial brochure, website QR code, proposal, and three coming-soon resources. The bundled KDD Introduction slides are intentionally not published here.
 - Recheck organizer affiliations, bios, homepage links, and image permissions.
 - If the official tutorial day, time, room, or venue changes, update both the page and this README.
 
@@ -66,12 +68,12 @@ If a different repository name or a new organization is chosen, update the `cano
 
 - Open `http://localhost:8000/` and check both desktop and mobile widths.
 - The hero title, Ubicomp framing, and Shanghai artwork display correctly.
-- The snapshot states **Monday, October 12, 2026**, **Morning**, **Room 5G**, and **Shanghai International Convention Center**.
-- The lecture sequence totals **180 minutes**, including its 10-minute break, without claiming an official clock start time.
+- The snapshot states **October 11, 2026**, **14:00–17:00**, **Afternoon**, **Room 5A**, and **Shanghai International Convention Center**.
+- The detailed schedule runs continuously from **14:00 to 17:00**, including its **15:30–16:00 Coffee Break**.
 - The hero's **Conference Website** button opens the UbiComp/ISWC 2026 conference home page, while the proposal PDF and presenter homepages open correctly.
-- All ten team photos load in numbered-photo order, with Ge Wang, Shengzhong Liu, and Jizhong Zhao in positions 6, 7, and 8. Their role is marked **Tutorial Chair**; the page and BibTeX spell **Yuhan Wang** and **Philip S. Yu** consistently.
-- The Design Space cards and human-agency element do not overlap at desktop, tablet, or 320px mobile width; the 人 icon is centered in its circle.
-- Open Materials contains exactly four items: Tutorial Proposal, Teaching Deck, Lecture Notes, and Architecture Tables.
+- All eleven team photos load, including Xin Hui; the page and BibTeX spell **Yuhan Wang** and **Philip S. Yu** consistently.
+- On desktop, each Design Space connector starts at a card's bottom-center. The outer white lines make one rounded right-angle turn into the left and right centers of Human agency, while the middle line joins its top-center. Connectors are hidden in the mobile single-column layout.
+- Open Materials includes Tutorial Brochure, Official Tutorial Website QR code, Tutorial Proposal, Teaching Deck, Lecture Notes, and Architecture Tables.
 - Navigation anchors work, the mobile page has no unwanted horizontal overflow, and Copy BibTeX works.
 - Coming-soon materials are not dead links.
 - `git remote -v` points to the **new Ubicomp repository** before any push.
